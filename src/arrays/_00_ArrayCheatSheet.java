@@ -27,9 +27,10 @@ public class _00_ArrayCheatSheet {
 			System.out.println(numbers[i]);
 		}
 
+		
 		int smallest = 99;
 		
-		for (int number: numbers) {
+		for (int number:numbers) {
 			if (number < smallest) {
 				smallest = number;
 			}

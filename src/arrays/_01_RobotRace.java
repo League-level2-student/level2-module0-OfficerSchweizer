@@ -5,19 +5,34 @@ import java.util.Random;
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
-	// 1. make a main method
-	public static void main(String[] args) {
-		Robot[] robots = new Robot[5];
 
-		for (int i = 0; i < 5; i++) {
-			Robot asdf = new Robot();
-			asdf.moveTo(i * 200 + 50, 500);
+	public static void main(String[] args) {
+		Robot[] robots = new Robot[3];
+
+		for (int i = 0; i < 3; i++) {
+			Robot.setWindowSize(1500, 1000);
+			robots[i] = new Robot();
+			robots[i].setAngle(90);
+			robots[i].setSpeed(10);
+			robots[i].moveTo(200, i * 100 + 50);
 		}
 
 		Random rand = new Random();
+		boolean keepGoing = true;
 
-		for (Robot robot : robots) {
-			int a = rand.nextInt(50);
+		while (keepGoing = true) {
+
+			for (Robot robot : robots) {
+				if (robot.getY() <= 0) {
+					keepGoing = false;
+					System.out.println("This robot wins the race!");
+					break;
+				}
+
+				int a = rand.nextInt(50);
+				robot.move(a);
+
+			}
 
 		}
 
